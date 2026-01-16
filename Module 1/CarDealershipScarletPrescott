@@ -1,0 +1,124 @@
+# Scarlet Prescott
+# This is a program to store new vehicle inventory and assist with monthly payments
+# Create variable of your favorite car brand (e.g., brand = ‘RAM’)
+brand = 'Volkswagen'
+
+# Create list of 5 of their models from cheapest to most expensive
+models = ['Taos', 'Tiguan', 'Atlas Cross Sport', 'ID.4', 'Golf R']
+
+# Append a 6th model to the list
+models.append('ID.Buzz')
+
+# Create list of 5 standard colors for all models
+standard_colors = ['Pure White', 'Deep Black Pearl', 'Platinum Gray Metallic', 'Reflex Silver', 'Atlantic Blue']
+
+# Replace your last color with a different color
+standard_colors[4] = 'Tornado Red'
+
+# Create variable of the current year (e.g., YEAR = ‘2026’)
+YEAR = '2026'
+
+# Create MSRP constant number (not string) of each of the models (e.g., MSRP_1500Truck = 33000)
+MSRP_TAOS = 25_495
+MSRP_TIGUAN = 30_805
+MSRP_ATLAS_CROSS_SPORT = 38_300
+MSRP_ID_4 = 45_095
+MSRP_GOLF_R = 49_455
+MSRP_ID_BUZZ = 59_995
+
+# Create a constant number (not string) for total months in 4yr, 5yr, and 6yr loans (e.g., fouryr = 48, sixyr = 72)
+THREE_YEAR = 36
+FOUR_YEAR = 48
+FIVE_YEAR = 60
+SIX_YEAR = 72
+
+# Create a variable for the guest's name. Be courteous in your upcoming messages :)
+guestsName = "Valued Customer"
+
+# Create message variable (with f-string) welcoming customer to your new car store
+message = f"Welcome {guestsName}! We are so happy that you stopped in today to look at our products. We are here to serve you, so let us know if you have any questions!"
+
+# Create awesome banner with your brand/name/dealership, however you want to welcome customers
+banner = f"""
+*******************************************************
+**  Welcome to Anderson's {brand} Dealership      **
+**        {YEAR} New Year, Same Great Prices!          **
+*******************************************************
+"""
+
+# Print awesome banner and welcome message
+print(banner)
+
+print(message)
+print()
+# Using title methods, print the vehicles in alphabetical order, with the year and available colors.
+print("Current Inventory:")
+for model in sorted(models):
+    print(f"{model.title()} ({YEAR}): Available colors ({", ".join(standard_colors)})")
+
+# Create a variable that calculates a monthly payment (no interest) for 5yr/60months for the first vehicle. Do not let more than two decimals to occur.
+taosFiveYearPayment = round(MSRP_TAOS / FIVE_YEAR, 2)
+
+# and print that in a nice, kind message. Don't be rude/pushy to the customer :)
+print()
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+print(f"If you are at all interested, the Taos model would be about ${taosFiveYearPayment} per month for a 5 year plan (no interest!!)")
+print()
+
+# Do the same thing, but give them 4yr and 6yr options for the same vehicle
+taosFourYearPayment = round(MSRP_TAOS / FOUR_YEAR, 2)
+taosSixYearPayment = round(MSRP_TAOS / SIX_YEAR, 2)
+#New feature 1
+taosThreeYearPayment = round(MSRP_TAOS / THREE_YEAR, 2)
+print(f"A 3 year plan would be approximately ${taosThreeYearPayment} per month.")
+#End of new feature number 1
+print()
+print(f"Also...A 4 year plan would only be about ${taosFourYearPayment} per month.")
+print()
+print(f"Lastly, another option would be our 6 year plan, for about ${taosSixYearPayment} per month. :)")
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+
+# Lastly, give them a 5yr option for each of the other vehicles, just to see if they are interested
+tiguanFiveYearPayment = round(MSRP_TIGUAN / FIVE_YEAR, 2)
+atlasCrossSportFiveYearPayment = round(MSRP_ATLAS_CROSS_SPORT / FIVE_YEAR, 2)
+id4FiveYearPayment = round(MSRP_ID_4 / FIVE_YEAR, 2)
+golfRFiveYearPayment = round(MSRP_GOLF_R / FIVE_YEAR, 2)
+idBuzzFiveYearPayment = round(MSRP_ID_BUZZ / FIVE_YEAR, 2)
+
+print()
+print(f"Here are our Other Five Year Plans for our Different Models:")
+print(f"Tiguan: ${tiguanFiveYearPayment} per month")
+print(f"Atlas Cross Sport: ${atlasCrossSportFiveYearPayment} per month")
+print(f"ID.4: ${id4FiveYearPayment} per month")
+print(f"Golf R: ${golfRFiveYearPayment} per month")
+print(f"Buzz.ID: ${idBuzzFiveYearPayment} per month")
+
+#2 New Feature: Discount for Paying Cash
+taosDiscount = MSRP_TAOS * .05
+tiguanDiscount = MSRP_TIGUAN * .05
+atlasCrossSportDiscount = MSRP_ATLAS_CROSS_SPORT * .05
+id4Discount = MSRP_ID_4 * .05
+golfRDiscount = MSRP_GOLF_R * .05
+idBuzzDiscount = MSRP_ID_BUZZ * .05
+print()
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+print("Our monthly deal is 5% off if you pay for a car in cash!")
+print()
+print("Discount if Paid in Cash:")
+print(f"Taos: ${taosDiscount} Off")
+print(f"Tiguan: ${tiguanDiscount} Off")
+print(f"Atlas Cross Sport: ${atlasCrossSportDiscount} Off")
+print(f"ID.4: ${id4Discount} Off")
+print(f"Golf R: ${golfRDiscount} Off")
+print(f"Buzz.ID: ${idBuzzDiscount} Off")
+print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+
+#3 New Feature:
+print()
+import random
+print("Our fun feature of the month is a $500 off Coupon for going with a random paint color on your model!")
+fun_feature = random.choice(standard_colors)
+print(f"Random color of the month: {fun_feature}")
+
+print()
+print("This concludes our advertisements and offers for the month. Thank you for shopping with Anderson's Volkswagen Dealership!")
