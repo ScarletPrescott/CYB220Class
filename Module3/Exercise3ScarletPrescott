@@ -1,0 +1,297 @@
+#ScarletPrescott
+#DictionaryQuestionOne
+
+    #creating my personalized dictionary
+person = {
+    "f_name": "Scarlet",
+    "l_name": "Prescott",
+    "age": 19,
+    "hometown": "Columbia, South Carolina",
+    "current_city": "Anderson",
+    "username": "Scar1406"
+}
+    #printing the entire dictionary
+print("Entire Dictionary:")
+print(person)
+print(
+    f"f_name: {person["f_name"]}\n"
+    f"l_name: {person["l_name"]}\n"
+    f"age: {person["age"]}\n"
+    f"hometown: {person["hometown"]}\n"
+    f"current_city: {person["current_city"]}\n"
+    f"username: {person['username']}\n"
+)
+print("\n")
+
+    #calling each individual key
+print("Individual Keys:")
+print("First name:", person["f_name"])
+print("Last name:", person["l_name"])
+print("Age:", person["age"])
+print("Hometown:", person["hometown"])
+print("Current City:", person["current_city"])
+print("Username:", person["username"])
+print("\n")
+
+#DictionaryQuestionTwo
+
+print(
+    f"This person's first name is {person['f_name']}, "
+    f"last name is {person['l_name']}, "
+    f"and their username is {person['username']}."
+)
+
+print(
+    f"For security reasons, we might ask them for their hometown, "
+    f"which is {person['hometown']}."
+)
+print("\n")
+
+#DictionaryQuestionThree
+
+    #definitions according to Google
+definitions = {
+    "python": "high-level, interpreted, and general-purpose programming language known for its emphasis on code readability, simplicity, and versatility",
+    "variable": "a symbolic name that serves as a reference or pointer to an object stored in the computer's memory",
+    "list": "built-in data structure that can hold an ordered collection of items",
+    "method": "function that is associated with an object or a class",
+    "if statement": "conditional control structure used to execute a specific block of code only if a given condition evaluates to True",
+    "dictionary": "built-in data type that stores data in key-value pairs",
+    "function": "a reusable block of code that performs a specific task"
+}
+    #printing out each word + definition
+for word, meaning in definitions.items():
+    print(f"{word}:")
+    print(f"    {meaning}\n")
+print("\n")
+
+#DictionaryQuestionFour
+
+definitions = {
+    "python": "high-level, interpreted, and general-purpose programming language known for its emphasis on code readability, simplicity, and versatility",
+    "variable": "a symbolic name that serves as a reference or pointer to an object stored in the computer's memory",
+    "list": "built-in data structure that can hold an ordered collection of items",
+    "method": "function that is associated with an object or a class",
+    "if statement": "conditional control structure used to execute a specific block of code only if a given condition evaluates to True",
+    "dictionary": "built-in data type that stores data in key-value pairs",
+    "function": "a reusable block of code that performs a specific task"
+}
+    #loop that runs through the keys and values
+for word, meaning in definitions.items():
+    print(f"{word}:\n    {meaning}\n")
+print("\n")
+
+#DictionaryQuestionFive
+
+south_carolina_counties = {
+    "Lexington County": "Lexington",
+    "Richland County": "Columbia",
+    "Greenville County": "Greenville",
+    "Charleston County": "Charleston",
+    "Anderson County": "Anderson",
+    "Abbeville County": "Abbeville"
+}
+
+#DictionaryQuestionSix
+
+county_list = [
+    "Lexington County",
+    "Richland County",
+    "Greenville County",
+    "Charleston County",
+    "Anderson County",
+    "Abbeville County",
+    "Aiken County",
+    "Spartanburg County",
+    "Florence County",
+    "Lancaster County"
+]
+    #looping to see if county is in the list
+for county in county_list:
+    if county in south_carolina_counties:
+        print(
+            f"{county} is in our dictionary, and the capital/seat is "
+            f"{south_carolina_counties[county]}."
+        )
+    else:
+        print(
+            f"{county} is not in our dictionary. "
+            f"We will add this county shortly. Thanks!"
+        )
+print("\n")
+
+#DictionaryQuestionSeven
+
+LexingtonCounty = {
+    "Lexington": 25700,
+    "West Columbia": 18000,
+    "Cayce": 13700,
+    "Chapin": 1900,
+    "Seven Oaks": 14652
+}
+RichlandCounty = {
+    "Columbia": 136000,
+    "Dentsville": 14000,
+    "St. Andrews": 20675,
+    "Forest Acres": 10000,
+    "Arcadia Lakes": 900
+}
+GreenvilleCounty = {
+    "Greenville": 72000,
+    "Taylors": 24000,
+    "Simpsonville": 23000,
+    "Mauldin": 26000,
+    "Five Forks": 17700
+}
+CharlestonCounty = {
+    "Charleston": 155000,
+    "Mount Pleasant": 92000,
+    "North Charleston": 115000,
+    "Summerville": 52000,
+    "Goose Creek": 46000
+}
+AndersonCounty = {
+    "Pendleton": 3500,
+    "Anderson": 30000,
+    "Powdersville": 12000,
+    "Centerville": 7100,
+    "Pelzer": 1500
+}
+    #list of county dictionaries
+sc_counties = [
+    LexingtonCounty,
+    RichlandCounty,
+    GreenvilleCounty,
+    CharlestonCounty,
+    AndersonCounty,
+]
+    #looping through lists/dictionaries
+for county in sc_counties:
+    for city, population in county.items():
+        print(f"In {city.title()}, the current population is {population}.")
+print("\n")
+
+#DictionaryQuestionEight
+
+sc_counties2 = {
+    "Lexington County": ["Lexington", "West Columbia", "Seven Oaks"],
+    "Richland County": ["Columbia", "St. Andrews", "Dentsville"],
+    "Greenville County": ["Greenville", "Mauldin", "Taylors"],
+    "Charleston County": ["Charleston", "North Charleston", "Mount Pleasant"],
+    "Anderson County": ["Anderson", "Powdersville", "Centerville"]
+}
+    #loop
+for county, cities in sc_counties2.items():
+    print(
+        f"In {county}, the largest cities are "
+        f"{cities[0]}, {cities[1]}, and {cities[2]}."
+    )
+print("\n")
+
+#UserInputQuestionOne
+
+name = input("Hello, please enter your name: ")
+print(f"Welcome to Anderson University, {name}!")
+print("\n")
+
+#UserInputQuestionTwo
+
+answer = float(input("How much money do you have? $"))
+    #realistic monetary value for each processor
+price_i3 = 130
+price_i5 = 200
+price_i7 = 300
+price_i9 = 500
+
+    #seeing which processor user can afford
+if answer >= price_i9:
+    print("You can afford either a i3, i5, i7, or i19 processor!")
+elif answer >= price_i7:
+    print("You can afford either a i3, i5, or i17 processor!")
+elif answer >= price_i5:
+    print("You can afford either a i3 or i5 processor!")
+elif answer >= price_i3:
+    print("You can afford a i3 processor!")
+else:
+    print("Sorry you cannot afford a processor at this time! Save up!")
+print("\n")
+
+#UserInputQuestionThree
+
+#I looked it up, and it seems like using while and try is the best strategy
+while True:
+    user_response = input("Enter an integer (or type 'stop' to exit the program): ")
+    if user_response == "stop":
+        break
+
+    try:
+        number = int(user_response)
+        if number % 2 == 0:
+            print(f"{user_response} is even!\n")
+        else:
+            print(f"{user_response} is odd!\n")
+    except ValueError:
+            print("Enter a valid integer.\n")
+print("\n")
+
+#UserInputQuestionFour
+
+active = True
+unknown_number = 53
+
+while active:
+    choose = input("Try to guess an unknown number between 12 and 68 (or type 'quit' to stop): ")
+
+    if choose == "quit":
+        print("Goodbye!")
+        break
+
+    if choose.isdigit():
+        choose = int(choose)
+        if choose == unknown_number:
+            print("You guessed the unknown number!")
+            active = False
+        elif choose > unknown_number:
+            print("Wrong, try a smaller number.")
+        else:
+            print("Wrong, try a larger number.")
+    else:
+        print("Guess the unknown number or 'quit'.")
+print("\n")
+
+#UserInputQuestionFive
+
+ubuntu_flavours = [
+    "edubuntu",
+    "kubuntu",
+    "lubuntu",
+    "ubuntu budgie",
+    "ubuntu cinnamon",
+    "ubuntu kylin",
+    "ubuntu mate",
+    "ubuntu studio",
+    "ubuntu unity",
+    "xubuntu"
+]
+
+results = {}
+
+while True:
+    username = input("Please enter your username (or 'quit' to stop): ")
+
+    if username.lower == "quit":
+        break
+
+    flavour = input("Enter you favorite Ubuntu flavor here: ").lower()
+
+    if flavour in ubuntu_flavours:
+        results[flavour] = username
+        print(f" {username}, Your favorite flavour has now been recorded!\n")
+    else:
+        print("That is not an actual ubuntu flavour.")
+        print("Valid options are:")
+        print(ubuntu_flavours)
+
+print("Results:")
+for flavour, username in results.items():
+    print(f"{username}: {flavour}")
