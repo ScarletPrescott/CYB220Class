@@ -1,0 +1,97 @@
+#Scarlet Prescott
+#1
+from easygui import *
+msgbox("Hi, welcome to my flower shop! I hope you enjoy looking "
+       "at the selection we have to offer!")
+
+#2
+message = ["Here are our flower options for this current season!"]
+title= "Flowers"
+choices = ["Great, i'm interested :)", "Maybe next time"]
+image= "floweroptions.png"
+
+reply = buttonbox(msg=message,title=title,choices=choices, image=image)
+
+#3
+if ccbox():
+       msgbox("Alright, up next is when you make a bouquet!")
+else:
+       msgbox("No worries, see you next time!")
+
+#4
+import easygui
+flowers = easygui.multchoicebox(
+       "Select your flowers:",
+       choices=["Pink Pansy", "Bloodroot", "Yellow Trillium", "Anemone Slyvestris", "Plumeria", "Snowflake"]
+)
+
+#5
+question = "What is your name?"
+title = "Name?"
+name = enterbox(question, title)
+print(name)
+
+date = easygui.enterbox(
+       "Enter the date (MM/DD/YYYY):",
+)
+
+#6
+question = "How many flowers(stems) are you looking to buy?"
+title = "Quantity?"
+amount = enterbox(question, title)
+print(amount)
+
+#7
+choice = buttonbox("What day of the week are you looking to pick these up?",
+                   'Pickup Preference',
+                   ['Mon', 'Tue', 'Wed', 'Thur', 'Fri']
+                   )
+
+#8
+choice2 = boolbox("Would you like the flowers wrapped?",
+                 "Packaging",
+                 ['Yes', 'No'])
+print(choice)
+
+#9
+order = f"""
+Your Personalized Flower Order:
+------------------------------
+Name: {name}
+Date: {date}
+Flowers: {flowers}
+Amount: {amount}
+Pickup Preference: {choice}
+Packaging: {choice2}
+"""
+easygui.msgbox(order,"Your Flower Order")
+
+#10
+save_file = easygui.filesavebox(
+       title="Save your Flower Order",
+       default="flower_order.txt",
+       filetypes=["*.txt"]
+)
+if save_file:
+       with open(save_file, "w") as file:
+              file.write(order)
+       easygui.msgbox("Your flower order has been saved!")
+
+#11
+open_file = easygui.fileopenbox(
+       title="Open your Flower Order",
+       default="flower_order.txt",
+       filetypes=["*.txt"]
+)
+if open_file:
+       with open(open_file, "r") as file:
+              content = file.read()
+       easygui.msgbox(content, "Your Flower order has been opened!")
+
+#12
+rating = easygui.integerbox(
+       "Please rate this customer service experience (1-10):",
+       lowerbound=1,
+       upperbound=10,
+)
+#Scarlet Prescott
