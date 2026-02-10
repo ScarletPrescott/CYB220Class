@@ -1,0 +1,187 @@
+#Scarlet Prescott
+#8-3 and 8.4 done in class
+def make_shirt(size='Large', message='I love Python'):
+    """Make a shirt"""
+    print(f"We are printing this shirt now...")
+    print(f"SIZE: {size}")
+    print(f"MESSAGE: {message}")
+
+make_shirt()
+make_shirt(message='True2AU')
+make_shirt(size="Medium", message="I Love Python")
+make_shirt(size="Small", message="I Love Python")
+print("\n")
+
+#8-5 done in class
+def describe_city(city, country='United States'):
+    msg = f"{city.title()} is in {country.title()}"
+    print(msg)
+describe_city('Anderson')
+describe_city('Greenville', country='The United States')
+describe_city('Toronto', country='Canada')
+print("\n")
+
+#8-6
+def city_country(city, country):
+    """make it return something like Santiago, Chile"""
+    return f"{city.title()}, {country.title()}"
+
+city = city_country('santiago', 'chile')
+print(city)
+city = city_country('paris', 'chile')
+print(city)
+city = city_country('berlin', 'germany')
+print(city)
+print("\n")
+
+#8-7
+    #first part
+def make_album(artist, album):
+    album_dict = {
+        "artist": artist.title(),
+        "album": album.title()
+        }
+    return album_dict
+
+album = make_album('noah kahan', 'the great divide')
+print(album)
+
+album = make_album('lizzie mcalpine', 'five seconds flat')
+print(album)
+
+album = make_album('phoebe bridgers', 'stranger in the alps')
+print(album)
+print("\n")
+    #2nd part
+def make_album(artist, album, num_songs=None):
+    album_dict = {
+        "artist": artist.title(),
+        "album": album.title()
+    }
+    if num_songs is not None:
+        album_dict['num_songs'] = num_songs
+
+    return album_dict
+album = make_album('noah kahan', 'the great divide')
+print(album)
+album = make_album('lizzie mcalpine', 'five seconds flat')
+print(album)
+album = make_album('phoebe bridgers', 'stranger in the alps')
+print(album)
+album = make_album('ed sheeran', 'play', num_songs=13)
+print(album)
+print("\n")
+
+#8-8
+def make_album(artist, album, num_songs=None):
+    album_dict = {
+        "artist": artist.title(),
+        "title": album.title()
+    }
+    if num_songs is not None:
+        album_dict['num_songs'] = num_songs
+
+    return album_dict
+album = make_album('noah kahan', 'the great divide')
+    #prompts
+title_prompt = "\nWhat album do you like? "
+artist_prompt = "Who is the artist of this album? "
+print("Just enter 'quit' if you would like to stop at any time.")
+
+while True:
+    title = input(title_prompt)
+    if title == 'quit':
+        break
+    artist = input(artist_prompt)
+    if artist == 'quit':
+        break
+    album = make_album(artist, title)
+    print(album)
+
+print("\nThanks for the response!")
+print("\n")
+
+#8-9
+def show_messages(messages):
+    for message in messages:
+        print(message)
+messages = ["Hey", "how are you?", "what's up?", "LOL", ":)"]
+show_messages(messages)
+print("\n")
+
+#8-10
+def show_messages(messages):
+    print("Showing all messages now:")
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    print("Sending all messages now:")
+    while messages:
+        current_message = messages.pop()
+        print(current_message)
+        sent_messages.append(current_message)
+
+messages = ["Hey", "how are you?", "what's up?", "LOL", ":)"]
+show_messages(messages)
+
+sent_messages = []
+send_messages(messages, sent_messages)
+
+print("\nHere is the final list of messages:")
+print(messages)
+print("\n")
+print(sent_messages)
+print("\n")
+
+#8-11
+def show_messages(messages):
+    print("Showing all messages now:")
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    print("Sending all messages now:")
+    while messages:
+        current_message = messages.pop()
+        print(current_message)
+        sent_messages.append(current_message)
+
+messages = ["Hey", "how are you?", "what's up?", "LOL", ":)"]
+show_messages(messages)
+
+sent_messages = []
+print("\n")
+send_messages(messages[:], sent_messages)
+
+print("\nHere is the final list of messages:")
+print(messages)
+print("\n")
+print(sent_messages)
+print("\n")
+
+#8-12
+def make_sandwich(*items):
+    print("\nI'll make you an amazing sandwich!:")
+    for item in items:
+        print(f"--- {item} is being added to your sandwich.")
+    print("Your sandwich is ready now! Enjoy :)")
+
+make_sandwich('turkey', 'cheese', 'mustard', 'mayonnaise')
+make_sandwich('peanut butter', 'jelly')
+make_sandwich('pineapple', 'ham', 'cheese')
+print("\n")
+
+#8-13
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    user_info["first_name"] = first
+    user_info["last_name"] = last
+    return user_info
+user_profile = build_profile('scarlet', 'prescott',
+                             location = 'anderson university',
+                             field = 'cybersecurity',
+                             year = 'freshman',
+                             hobbies = 'crafting, sports, and baking')
+print(user_profile)
+#Scarlet Prescott
