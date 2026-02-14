@@ -1,0 +1,496 @@
+#ScarletPrescott
+#9-1 & 9-2 (in class)
+class Restaurant:
+    """Simply attempt to model a restaurant"""
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+    def describe_restaurant(self):
+        print(f"The restaurant name is {self.restaurant_name} and serves {self.cuisine_type}.")
+
+    def open_restaurant(self):
+        print(f"{self.restaurant_name.title()} is open!")
+
+brian_restaurant = Restaurant("MkDonalds", "Fast Food")
+dakota_restaurant = Restaurant("SmokN BBQ", "BBQ")
+ohmi_restaurant = Restaurant("Olive Garden", "Italian")
+
+brian_restaurant.describe_restaurant()
+dakota_restaurant.describe_restaurant()
+ohmi_restaurant.describe_restaurant()
+print("\n")
+
+#9-3 (in class)
+class User:
+    """Simply attempt to model a user of our program"""
+    def __init__(self, first_name, last_name, age, username, favorite_color):
+        self.f_name = first_name
+        self.l_name = last_name
+        self.age = age
+        self.username = username
+        self.favorite_color = favorite_color
+
+    def describe_user(self):
+        print(f"The User Details are Below:")
+        print("First Name:", self.f_name)
+        print("Last Name:", self.l_name)
+        print("Age:", self.age)
+        print("Username:", self.username)
+        print("Favorite Color:", self.favorite_color)
+
+    def greet_user(self):
+        print(f"Hello, {self.username.title()}!")
+
+user0 = User("Sarah", "Grech", 34, "sgrech", "green")
+user0.describe_user()
+print("\n")
+user1 = User("Brandon", "Grech", 34, "bgrech", "black")
+user1.describe_user()
+print("\n")
+
+#9-4 (In class)
+class Restaurant:
+    """Simply attempt to model a restaurant"""
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name.title()
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print(f"The restaurant name is {self.restaurant_name} and serves {self.cuisine_type}.")
+
+    def open_restaurant(self):
+        print(f"The restaurant {self.restaurant_name.title()} is open!")
+
+    def set_number_served(self, number_served):
+        self.number_served += abs(number_served)
+
+    def increment_number_served(self, additional_served):
+        self.number_served += additional_served
+
+restaurant = Restaurant("MkDonalds", "Fast Food")
+restaurant.describe_restaurant()
+print(f"\nNumber served: {restaurant.number_served}")
+restaurant.number_served = 0
+print(f"Number served: {restaurant.number_served}")
+
+restaurant.set_number_served(6)
+print(f"Number served: {restaurant.number_served}")
+
+restaurant.increment_number_served(200)
+print(f"Number served: {restaurant.number_served}")
+print("\n")
+
+#9-5
+class User:
+    """Simply attempt to model a user of our program"""
+    def __init__(self, first_name, last_name, age, username, favorite_color):
+        self.f_name = first_name
+        self.l_name = last_name
+        self.age = age
+        self.username = username
+        self.favorite_color = favorite_color
+        self.login_attempts = 0
+
+    def describe_user(self):
+        print(f"The User Details are Below:")
+        print("First Name:", self.f_name)
+        print("Last Name:", self.l_name)
+        print("Age:", self.age)
+        print("Username:", self.username)
+        print("Favorite Color:", self.favorite_color)
+
+    def greet_user(self):
+        print(f"Hello, {self.username.title()}!")
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+user0 = User("Sarah", "Grech", 34, "sgrech", "green")
+user0.describe_user()
+user0.greet_user()
+print("\n3 login attempts...")
+user0.increment_login_attempts()
+user0.increment_login_attempts()
+user0.increment_login_attempts()
+print(f" Login attempts: {user0.login_attempts}")
+
+print("Resetting login attempts...")
+user0.reset_login_attempts()
+print(f" login attempts: {user0.reset_login_attempts()}")
+print("\n")
+
+#9-6
+class Restaurant:
+    """Simply attempt to model a restaurant"""
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name.title()
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
+
+    def describe_restaurant(self):
+        print(f"The restaurant name is {self.restaurant_name} and serves {self.cuisine_type}.")
+
+    def open_restaurant(self):
+        print(f"The restaurant {self.restaurant_name.title()} is open!")
+
+    def set_number_served(self, number_served):
+        self.number_served += abs(number_served)
+
+    def increment_number_served(self, additional_served):
+        self.number_served += additional_served
+
+class IceCreamStand(Restaurant):
+
+    def __init__(self, restaurant_name, cuisine_type='ice cream'):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = []
+
+    def show_flavors(self):
+        print("\nIce Cream flavors:")
+        for flavor in self.flavors:
+            print(f"- {flavor.title()}")
+
+Cookout = IceCreamStand("Cookout")
+Cookout.flavors = ['vanilla', 'chocolate', 'strawberry']
+
+Cookout.describe_restaurant()
+Cookout.show_flavors()
+print("\n")
+
+#9-7
+class User:
+    """Simply attempt to model a user of our program"""
+    def __init__(self, first_name, last_name, age, username, favorite_color):
+        self.f_name = first_name
+        self.l_name = last_name
+        self.age = age
+        self.username = username
+        self.favorite_color = favorite_color
+        self.login_attempts = 0
+
+    def describe_user(self):
+        print(f"The User Details are Below:")
+        print("First Name:", self.f_name)
+        print("Last Name:", self.l_name)
+        print("Age:", self.age)
+        print("Username:", self.username)
+        print("Favorite Color:", self.favorite_color)
+
+    def greet_user(self):
+        print(f"Hello, {self.username.title()}!")
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+class Admin(User):
+
+    def __init__(self, first_name, last_name, age, username, favorite_color):
+        super().__init__(first_name, last_name, age, username, favorite_color)
+        self.privileges = []
+
+    def show_privileges(self):
+        print("\nAdmin privileges:")
+        for privilege in self.privileges:
+            print(f"- {privilege.title()}")
+
+user0 = Admin("Sarah", "Grech", 34, "sgrech", "green")
+user0.describe_user()
+
+user0.privileges = [
+    'can add post',
+    'can delete post',
+    'can ban user'
+    ]
+
+user0.show_privileges()
+print("\n")
+
+#9-8
+class User():
+    """Simple user profile"""
+    def __init__(self, first_name, last_name, age, username, favorite_color):
+        self.f_name = first_name
+        self.l_name = last_name
+        self.age = age
+        self.username = username
+        self.favorite_color = favorite_color
+        self.login_attempts = 0
+
+    def describe_user(self):
+        print(f"The User Details are Below:")
+        print("First Name:", self.f_name)
+        print("Last Name:", self.l_name)
+        print("Age:", self.age)
+        print("Username:", self.username)
+        print("Favorite Color:", self.favorite_color)
+
+    def greet_user(self):
+        print(f"Hello, {self.username.title()}!")
+
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+
+class Admin(User):
+
+    def __init__(self, first_name, last_name, age, username, favorite_color):
+        super().__init__(first_name, last_name, age, username, favorite_color)
+
+        self.privileges = Privileges()
+
+class Privileges():
+
+    def __init__(self, privileges=[]):
+        self.privileges = privileges
+
+    def show_privileges(self):
+        print("\nPrivileges:")
+        if self.privileges:
+            for privilege in self.privileges:
+                print(f"- {privilege.title()}")
+        else:
+            print("This user has no privileges")
+
+user0 = Admin("Sarah", "Grech", 34, "sgrech", "green")
+user0.describe_user()
+user0.privileges.show_privileges()
+print("\nAdding privileges...")
+
+user0_privileges = [
+    'can add post',
+    'can delete post',
+    'can ban user'
+    ]
+
+user0.privileges.privileges = user0_privileges
+user0.privileges.show_privileges()
+print("\n")
+
+#9-9
+class Car:
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe a car"""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
+
+    def read_odometer(self):
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
+
+    def update_odometer(self, mileage):
+        """Set the odometer reading to the given value."""
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+
+    def increment_odometer(self, miles):
+        """Add the given amount to the odometer reading."""
+        self.odometer_reading += miles
+
+class Battery():
+    """model a battery for an electric car"""
+
+    def __init__(self, battery_size=50):
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        print(f"This car has a {self.battery_size} battery.")
+
+    def get_range(self):
+        if self.battery_size == 50:
+            range = 173
+        elif self.battery_size == 65:
+            range = 225
+
+        print(f"This car can go {range} miles on full charge.")
+
+    def upgrade_battery(self):
+        """Upgrade the battery to 65 if it isn't already"""
+        if self.battery_size == 65:
+            self.battery_size = 100
+            print("Battery upgraded to 100.")
+        else:
+            print("Battery is already upgraded!")
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """Initialize attributes of the parent class."""
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+print("Check the range of electric car:")
+my_car = ElectricCar('tesla', 'model s', 2016)
+my_car.battery.get_range()
+
+print("\nUpgrade battery and check range again:")
+my_car.battery.upgrade_battery()
+my_car.battery.get_range()
+print("\n")
+
+#9-10 (done in separate restaurant.py and my_restaurant.py files)
+#9-11 (done in separate user.py and my_user.py files)
+#9-12 (done in separate admin.py and my_admin.py files)
+
+#9-13 done in class
+import random
+class Die:
+    """Create a dice that is six sides or maybe different"""
+    def __init__(self, sides=6):
+        self.sides = sides
+    def roll(self):
+        result = random.randint(1, self.sides+1)
+        print(result)
+        return result
+my_dice = Die()
+your_dice = Die(20)
+
+my_dice.roll()
+your_dice.roll()
+print("\n")
+
+#9-14 done in class
+import random
+chars = ['A','B','C','D','E','F','G','H','I','J']
+chars += ['1','2','3','4','5']
+
+char1=(random.choice(chars))
+char2=(random.choice(chars))
+char3=(random.choice(chars))
+char4=(random.choice(chars))
+
+winning_number = char1+char2+char3+char4
+print(f"{winning_number} is the winner!")
+print(winning_number)
+
+#9-15 continued in class
+def roll_dice():
+    char1 = random.choice(chars)
+    char2 = random.choice(chars)
+    char3 = random.choice(chars)
+    char4 = random.choice(chars)
+    number = char1+char2+char3+char4
+    return number
+
+my_number = ''
+counter = 0
+while my_number != winning_number:
+    my_number = roll_dice()
+    counter += 1
+
+print(f"My number is:{my_number}")
+print(f"It took this many number of attempts:{counter}")
+print("\n")
+
+#9-16 (Done on Word document)
+#10-1 (done in learning_python.txt and learning_python.py)
+#10-2 (done in learning_python.txt and learning_python.py)
+
+#10-3
+from pathlib import Path
+path = Path('pi_digits.txt')
+contents = path.read_text()
+for line in contents.splitlines():
+    print(line)
+print("\n")
+
+#10-4
+from pathlib import Path
+path = Path('guest.txt')
+
+name = input("Enter your name: ")
+path.write_text(name)
+print("\n")
+
+#10-5 (completed in separate files guest_book.py and guest_book.txt
+
+#10-6
+try:
+    x = input("List a number: ")
+    x = int(x)
+
+    y = input("Give me a 2nd number: ")
+    y = int(y)
+except ValueError:
+    print("Sorry, I really needed a number.")
+else:
+    sum = x + y
+    print(f"The sum of {x} and {y} is {sum}.")
+
+#10-7
+print("Enter 'q' if you want to quit.\n")
+
+while True:
+    try:
+        x = input("\nGive me a number: ")
+        if x == 'q':
+            break
+        x = int(x)
+        y = input("Give me a 2nd number: ")
+        if y == 'q':
+            break
+        y = int(y)
+    except ValueError:
+        print("Sorry, I need an actual number.")
+    else:
+        sum = x + y
+        print(f"The sum of {x} and {y} is {sum}.")
+
+#10-8
+from pathlib import Path
+
+filenames = ['cats.txt', 'dogs.txt']
+
+for filename in filenames:
+    print(f"\nReading file: {filename}")
+
+    path = Path(filename)
+    try:
+        contents = path.read_text()
+    except FileNotFoundError:
+        print(" Sorry, that file does not exist.")
+    else:
+        print(contents)
+
+#10-9
+from pathlib import Path
+filenames = ['cats.txt', 'dogs.txt']
+for filename in filenames:
+    path = Path(filename)
+    try:
+        contents = path.read_text()
+    except FileNotFoundError:
+        pass
+    else:
+        print(f"\nReading file: {filename}")
+        print(contents)
+
+#10-10 (skip)
+
+#10-11 (done in favorite_number_writer.py and favorite_number_reader.py
+
+#10-12 (done in favorite_number_remembered.py)
+#ScarletPrescott
+
+
