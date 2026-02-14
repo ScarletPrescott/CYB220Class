@@ -1,0 +1,3 @@
+In Python, you can create programs that look visually aesthetic and appealing.
+In Python, you can create programs that complete mathematical operations.
+In Python, you can store as much information as you want in a file.
